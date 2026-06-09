@@ -4,6 +4,491 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Feedback — ARMASE Student Loan Portal</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #F5F0E8;
+  color: #2a2a2a;
+}
+
+/* TOP HEADER */
+.top-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  background: #3D5A4C;
+  color: #F7F3EC;
+  text-align: center;
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 36px; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 4rem;
+  background: rgba(245,240,232,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(26,22,18,0.1);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-mark {
+  width: 36px; height: 36px;
+  background: #3D5A4C;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1A1612;
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  color: #7A7368;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: #1A1612; }
+
+.nav-active {
+  color: #1A1612 !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid #3D5A4C;
+  padding-bottom: 2px;
+}
+
+/* MAIN */
+.feedback-main { padding-top: 116px; }
+
+/* HERO */
+.fb-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 70vh;
+  background: #F5F0E8;
+}
+
+.fb-hero-left {
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fb-brand {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fb-brand::before {
+  content: '';
+  width: 16px; height: 16px;
+  background: #2a2a2a;
+  display: inline-block;
+}
+
+.fb-hero-left h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.fb-sub {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.fb-hero-right {
+  background: #E8DDD0;
+}
+
+/* BUTTONS */
+.btn-be-heard,
+.btn-start,
+.btn-finish {
+  background: #D4B866;
+  color: #1a1a1a;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.2s;
+}
+
+.btn-be-heard:hover,
+.btn-start:hover,
+.btn-finish:hover { background: #c4a850; }
+
+.btn-next {
+  background: #D4B866;
+  color: #1a1a1a;
+  border: none;
+  padding: 0.7rem 1.8rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 1.5rem;
+  transition: background 0.2s;
+}
+
+.btn-next:hover { background: #c4a850; }
+
+/* INTRO */
+.fb-intro {
+  background: #FDFAF5;
+  padding: 6rem 8rem;
+  text-align: center;
+  border-top: 1px solid #e8e0d0;
+  border-bottom: 1px solid #e8e0d0;
+}
+
+.fb-intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8rem;
+}
+
+.fb-intro-line {
+  width: 120px;
+  height: 3px;
+  background: repeating-linear-gradient(
+    to right,
+    #D4B866 0px, #D4B866 8px,
+    transparent 8px, transparent 14px
+  );
+  margin: 0 auto 2rem;
+}
+
+.fb-intro p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto 1rem;
+  font-weight: 300;
+}
+
+.fb-deadline {
+  font-style: italic;
+  color: #888 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* SECTION BANNER */
+.fb-section-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 40vh;
+  background: #F5F0E8;
+  border-top: 1px solid #e8e0d0;
+  border-bottom: 1px solid #e8e0d0;
+}
+
+.fb-section-banner-left {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.fb-section-banner-left h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.banner-underline {
+  width: 100px;
+  height: 3px;
+  background: repeating-linear-gradient(
+    to right,
+    #D4B866 0px, #D4B866 8px,
+    transparent 8px, transparent 14px
+  );
+  margin-bottom: 2rem;
+}
+
+.fb-section-banner-right {
+  background: #E8DDD0;
+}
+
+/* QUESTIONS */
+.fb-question {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 50vh;
+  background: #FDFAF5;
+  border-top: 1px solid #e8e0d0;
+}
+
+.fb-question.alt {
+  background: #F5F0E8;
+}
+
+.fb-question-left {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fb-question-right {
+  background: #E8DDD0;
+}
+
+.fb-question-right-blank {
+  background: #DDD3C5;
+}
+
+.q-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.fb-question-left h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
+}
+
+.q-underline {
+  width: 80px;
+  height: 3px;
+  background: repeating-linear-gradient(
+    to right,
+    #D4B866 0px, #D4B866 6px,
+    transparent 6px, transparent 11px
+  );
+  margin-bottom: 1.8rem;
+}
+
+/* CHOICES */
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 360px;
+}
+
+.choice-item {
+  background: #EDE8DF;
+  border: 1.5px solid transparent;
+  border-radius: 4px;
+  padding: 0.7rem 1rem;
+  font-size: 0.88rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.choice-item:hover {
+  background: #E0D9CE;
+  border-color: #D4B866;
+}
+
+.choice-item.selected {
+  background: #D4B866;
+  color: #1a1a1a;
+  font-weight: 500;
+  border-color: #D4B866;
+}
+
+/* STUDENT DETAILS */
+.student-details {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 360px;
+}
+
+.details-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 0.3rem;
+}
+
+.fb-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #d8d0c4;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  font-family: 'DM Sans', sans-serif;
+  background: #FDFAF5;
+  color: #1a1a1a;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.fb-input:focus {
+  border-color: #D4B866;
+}
+
+/* THANK YOU */
+.fb-thankyou {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 50vh;
+  background: #F5F0E8;
+  border-top: 1px solid #e8e0d0;
+}
+
+.fb-thankyou-left {
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fb-ty-small {
+  font-size: 0.82rem;
+  color: #888;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.fb-thankyou-left h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+
+.fb-ty-sub {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.7;
+  max-width: 380px;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.btn-get-touch {
+  display: inline-block;
+  background: #D4B866;
+  color: #1a1a1a;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+  width: fit-content;
+}
+
+.btn-get-touch:hover { background: #c4a850; }
+
+.fb-thankyou-right { background: #E8DDD0; }
+
+/* FOOTER */
+footer {
+  background: #3D5A4C;
+  color: rgba(247,243,236,0.7);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+footer strong { color: #F7F3EC; }
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: rgba(247,243,236,0.6);
+  text-decoration: none;
+  font-size: 0.82rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: #F7F3EC; }
+</style>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="feedback.css">
 </head>
@@ -48,7 +533,7 @@
       <div class="fb-intro-line"></div>
       <p>We thrive on feedback. It is integral to our growth. Your response will help us improve our loan services and points of interaction with every student.</p>
       <p>This survey is comprised of multiple-choice questions. It will take a maximum of five minutes to complete.</p>
-      <p class="fb-deadline">This poll will close on September 20, 2030.</p>
+
       <button class="btn-start" onclick="document.getElementById('section-1').scrollIntoView({behavior:'smooth'})">START THE SURVEY</button>
     </section>
 
@@ -93,7 +578,7 @@
           <div class="choice-item" onclick="selectChoice(this, 'q2')">Low Interest Rates</div>
           <div class="choice-item" onclick="selectChoice(this, 'q2')">Flexible Repayment</div>
           <div class="choice-item" onclick="selectChoice(this, 'q2')">No Hidden Fees</div>
-          <div class="choice-item" onclick="selectChoice(this, 'q2')">Global Coverage</div>
+        
         </div>
         <button class="btn-next" onclick="document.getElementById('q3').scrollIntoView({behavior:'smooth'})">NEXT</button>
       </div>
