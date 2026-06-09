@@ -1,23 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arisole Finance Loans</title>
-    <link rel="stylesheet" href="style.css" />
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — ARMASE Student Loan Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="contact.css">
+</head>
 <body>
-    
-        <nav>
-            
-  <a href="index.html">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="contact.html">Contact</a>
-  <a href="loan-application.html">Loan Application</a>
-  <a href="feedback.html">Feedback</a>
 
-        </nav>
-    </header>
+  <div class="top-header">Welcome to ARMASE Student Loan Portal</div>
 
-    <main>
-        
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#E8D5A3" stroke-width="2" stroke-linecap="round">
+          <path d="M12 3L2 8l10 5 10-5-10-5zM2 16l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <span class="logo-text">ARMASE</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html" class="nav-active">Contact</a></li>
+      <li><a href="loan application.html">Loan Application</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <!-- FULL PAGE BACKGROUND -->
+  <section class="contact-page">
+    <div class="contact-overlay"></div>
+
+    <div class="contact-wrapper">
+
+      <!-- TITLE -->
+      <p class="contact-brand">ARMASE LOAN FINANCE</p>
+      <div class="contact-divider"></div>
+
+      <!-- CONTACT CARD -->
+      <div class="contact-card">
+        <h2>CONTACT US</h2>
+
+        <!-- PHONE 1 -->
+        <div class="contact-row">
+          <div class="row-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 4.18 2 2 0 0 1 5.06 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.97.72 2.9a2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.18-1.18a2 2 0 0 1 2.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <a href="tel:+26773376419" class="row-text">+267 73376419</a>
+        </div>
+
+        <!-- PHONE 2 -->
+        <div class="contact-row">
+          <div class="row-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 4.18 2 2 0 0 1 5.06 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.97.72 2.9a2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.18-1.18a2 2 0 0 1 2.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <a href="tel:+26776577693" class="row-text">+267 76577693</a>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="contact-row">
+          <div class="row-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <a href="mailto:katiromasedi65@gmail.com" class="row-text">katiromasedi65@gmail.com</a>
+        </div>
+
+        <!-- WHATSAPP -->
+        <div class="contact-row">
+          <div class="row-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.826L.057 23.571l5.9-1.548A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.401l-.371-.22-3.502.918.934-3.417-.242-.393A9.954 9.954 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+            </svg>
+          </div>
+          <a href="https://wa.me/26773376419" target="_blank" class="row-text">WhatsApp Us</a>
+          
+        </div>
+
+        <!-- LOCATION -->
+        <div class="contact-row">
+          <div class="row-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <span class="row-text">Disana,Ramotswa, Botswana</span>
+        </div>
+
+        <!-- OFFICE HOURS -->
+        <div class="contact-row">
+          <div class="row-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <span class="row-text">Mon – Fri: 0800AM – 1900PM</span>
+        </div>
+
+        <p class="card-footer">ARMASE LOAN FINANCE 2026.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>ARMASE &copy; 2026</strong>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="loan application.html">Loan Application</a>
+      <a href="feedback.html">Feedback</a>
+    </div>
+    <span>ARMASE LOANS. All Rights Reserved</span>
+  </footer>
+
+</body>
+</html>

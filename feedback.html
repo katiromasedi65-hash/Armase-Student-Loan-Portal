@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback — ARMASE Student Loan Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+
+  <div class="top-header">Welcome to ARMASE Student Loan Portal</div>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#E8D5A3" stroke-width="2" stroke-linecap="round">
+          <path d="M12 3L2 8l10 5 10-5-10-5zM2 16l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <span class="logo-text">ARMASE</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="loan application.html">Loan Application</a></li>
+      <li><a href="feedback.html" class="nav-active">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <main class="feedback-main">
+
+    <!-- HERO SECTION -->
+    <section class="fb-hero">
+      <div class="fb-hero-left">
+        <p class="fb-brand">ARMASE LOAN FINANCE</p>
+        <h1>STUDENT<br>FEEDBACK<br>SURVEY</h1>
+        <p class="fb-sub">Tell us about your experience</p>
+        <button class="btn-be-heard" onclick="document.getElementById('intro-section').scrollIntoView({behavior:'smooth'})">BE HEARD</button>
+      </div>
+      <div class="fb-hero-right"></div>
+    </section>
+
+    <!-- INTRO SECTION -->
+    <section class="fb-intro" id="intro-section">
+      <h2>INTRODUCTION</h2>
+      <div class="fb-intro-line"></div>
+      <p>We thrive on feedback. It is integral to our growth. Your response will help us improve our loan services and points of interaction with every student.</p>
+      <p>This survey is comprised of multiple-choice questions. It will take a maximum of five minutes to complete.</p>
+      <p class="fb-deadline">This poll will close on September 20, 2030.</p>
+      <button class="btn-start" onclick="document.getElementById('section-1').scrollIntoView({behavior:'smooth'})">START THE SURVEY</button>
+    </section>
+
+    <!-- SECTION 1 BANNER -->
+    <section class="fb-section-banner">
+      <div class="fb-section-banner-left">
+        <p class="section-label">SECTION 1</p>
+        <h2>YOUR<br>EXPERIENCE</h2>
+        <div class="banner-underline"></div>
+        <button class="btn-start" onclick="document.getElementById('q1').scrollIntoView({behavior:'smooth'})">START</button>
+      </div>
+      <div class="fb-section-banner-right"></div>
+    </section>
+
+    <!-- QUESTION 1 -->
+    <section class="fb-question" id="q1">
+      <div class="fb-question-left">
+        <p class="q-label">QUESTION #1</p>
+        <h3>How would you rate the overall quality of our loan service?</h3>
+        <div class="q-underline"></div>
+        <div class="choices" id="choices-q1">
+          <div class="choice-item" onclick="selectChoice(this, 'q1')">Excellent</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q1')">Good</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q1')">Average</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q1')">Poor</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q1')">Very Poor</div>
+        </div>
+        <button class="btn-next" onclick="document.getElementById('q2').scrollIntoView({behavior:'smooth'})">NEXT</button>
+      </div>
+      <div class="fb-question-right"></div>
+    </section>
+
+    <!-- QUESTION 2 -->
+    <section class="fb-question alt" id="q2">
+      <div class="fb-question-right-blank"></div>
+      <div class="fb-question-left">
+        <p class="q-label">QUESTION #2</p>
+        <h3>Which aspect of our loan do you find most valuable?</h3>
+        <div class="q-underline"></div>
+        <div class="choices" id="choices-q2">
+          <div class="choice-item" onclick="selectChoice(this, 'q2')">Quick Approval</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q2')">Low Interest Rates</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q2')">Flexible Repayment</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q2')">No Hidden Fees</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q2')">Global Coverage</div>
+        </div>
+        <button class="btn-next" onclick="document.getElementById('q3').scrollIntoView({behavior:'smooth'})">NEXT</button>
+      </div>
+    </section>
+
+    <!-- QUESTION 3 -->
+    <section class="fb-question" id="q3">
+      <div class="fb-question-left">
+        <p class="q-label">QUESTION #3</p>
+        <h3>How satisfied are you with your recent interaction with our staff team?</h3>
+        <div class="q-underline"></div>
+        <div class="choices" id="choices-q3">
+          <div class="choice-item" onclick="selectChoice(this, 'q3')">Very Satisfied</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q3')">Satisfied</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q3')">Dissatisfied</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q3')">Very Dissatisfied</div>
+        </div>
+        <button class="btn-next" onclick="document.getElementById('section-2-banner').scrollIntoView({behavior:'smooth'})">NEXT</button>
+      </div>
+      <div class="fb-question-right"></div>
+    </section>
+
+    <!-- SECTION 2 BANNER -->
+    <section class="fb-section-banner" id="section-2-banner">
+      <div class="fb-section-banner-left">
+        <p class="section-label">SECTION 2</p>
+        <h2>FURTHER<br>IMPROVEMENT</h2>
+        <div class="banner-underline"></div>
+        <button class="btn-start" onclick="document.getElementById('q4').scrollIntoView({behavior:'smooth'})">START</button>
+      </div>
+      <div class="fb-section-banner-right"></div>
+    </section>
+
+    <!-- QUESTION 4 -->
+    <section class="fb-question" id="q4">
+      <div class="fb-question-left">
+        <p class="q-label">QUESTION #4</p>
+        <h3>How likely are you to recommend our loan service to other students?</h3>
+        <div class="q-underline"></div>
+        <div class="choices" id="choices-q4">
+          <div class="choice-item" onclick="selectChoice(this, 'q4')">Extremely Likely</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q4')">Likely</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q4')">Unlikely</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q4')">Extremely Unlikely</div>
+        </div>
+        <button class="btn-next" onclick="document.getElementById('q5').scrollIntoView({behavior:'smooth'})">NEXT</button>
+      </div>
+      <div class="fb-question-right"></div>
+    </section>
+
+    <!-- QUESTION 5 -->
+    <section class="fb-question alt" id="q5">
+      <div class="fb-question-right-blank"></div>
+      <div class="fb-question-left">
+        <p class="q-label">QUESTION #5</p>
+        <h3>What changes would you like to see in our loan service?</h3>
+        <div class="q-underline"></div>
+        <div class="choices" id="choices-q5">
+          <div class="choice-item" onclick="selectChoice(this, 'q5')">Lower Interest Rates</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q5')">Faster Processing</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q5')">Better Staff Support</div>
+          <div class="choice-item" onclick="selectChoice(this, 'q5')">Simpler Application</div>
+        </div>
+
+        <!-- STUDENT DETAILS -->
+        <div class="student-details">
+          <p class="details-title">YOUR DETAILS</p>
+          <input type="text" placeholder="Full Name" class="fb-input">
+          <input type="text" placeholder="Student Number" class="fb-input">
+          <input type="email" placeholder="Email Address" class="fb-input">
+          <input type="text" placeholder="Course / Programme" class="fb-input">
+          <input type="text" placeholder="Institution" class="fb-input">
+        </div>
+
+        <button class="btn-finish" onclick="submitFeedback()">FINISH</button>
+      </div>
+    </section>
+
+    <!-- THANK YOU SECTION -->
+    <section class="fb-thankyou" id="thankyou" style="display:none;">
+      <div class="fb-thankyou-left">
+        <p class="fb-ty-small">Your responses have been recorded.</p>
+        <h2>YOUR FEEDBACK<br>IS GREATLY<br>APPRECIATED</h2>
+        <p class="fb-ty-sub">If there's anything else you wish to share with our team, please email <strong>info@armaseloans.com</strong></p>
+        <a href="contact.html" class="btn-get-touch">GET IN TOUCH</a>
+      </div>
+      <div class="fb-thankyou-right"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>ARMASE &copy; 2026</strong>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="loan application.html">Loan Application</a>
+      <a href="feedback.html">Feedback</a>
+    </div>
+    <span>ARMASE LOANS. All Rights Reserved</span>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
