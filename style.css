@@ -34,7 +34,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── NAV ── */
+
 nav {
   position: fixed;
   top: 36px; left: 0; right: 0;
@@ -101,7 +101,7 @@ nav {
 }
 .nav-cta:hover { background: var(--sage) !important; color: var(--cream) !important; }
 
-/* ── HERO ── */
+
 .hero {
   min-height: 100vh;
   display: grid;
@@ -193,7 +193,7 @@ h1 em {
   display: block;
 }
 
-/* ── HERO RIGHT (login panel) ── */
+
 .hero-right {
   display: flex;
   align-items: center;
@@ -222,7 +222,7 @@ h1 em {
   background: rgba(201,168,76,0.06);
 }
 
-/* ── LOGIN CARD ── */
+
 .login-card {
   background: var(--card-bg);
   border-radius: 20px;
@@ -255,7 +255,7 @@ h1 em {
   font-weight: 300;
 }
 
-/* ── TABS ── */
+
 .tabs {
   display: flex;
   background: var(--sage-light);
@@ -286,7 +286,7 @@ h1 em {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-/* ── FORM ── */
+
 .form-group { margin-bottom: 1.2rem; }
 
 label {
@@ -333,7 +333,7 @@ input:focus {
   text-decoration: none;
 }
 
-/* ── BUTTONS ── */
+
 .btn-primary {
   width: 100%;
   background: var(--ink);
@@ -391,7 +391,7 @@ input:focus {
 
 .google-icon svg { width: 18px; height: 18px; }
 
-/* ── TRUST & SIGNUP ── */
+
 .signup-prompt {
   text-align: center;
   margin-top: 1.4rem;
@@ -425,7 +425,7 @@ input:focus {
 
 .trust-badge svg { width: 14px; height: 14px; }
 
-/* ── FEATURES ── */
+
 .features {
   background: var(--ink);
   color: var(--cream);
@@ -461,7 +461,7 @@ input:focus {
   font-weight: 300;
 }
 
-/* ── TESTIMONIAL ── */
+
 .testimonial {
   padding: 5rem 6rem;
   background: var(--cream);
@@ -513,7 +513,7 @@ input:focus {
 .author-name { font-weight: 500; font-size: 0.9rem; }
 .author-info { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
 
-/* ── FOOTER ── */
+
 footer {
   background: var(--sage);
   color: rgba(247,243,236,0.7);
@@ -529,11 +529,11 @@ footer nav { gap: 2rem; }
 footer nav a { color: rgba(247,243,236,0.6); text-decoration: none; font-size: 0.82rem; }
 footer nav a:hover { color: var(--cream); }
 
-/* ── PANEL TOGGLE ── */
+
 .register-fields { display: none; }
 .login-fields { display: block; }
 
-/* ── ANIMATIONS ── */
+
 @keyframes floatCard {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
