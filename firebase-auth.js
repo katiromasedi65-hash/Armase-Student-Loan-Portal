@@ -52,12 +52,13 @@ window.forgotPassword = function() {
 // Protect pages
 export function checkAuth() {
   onAuthStateChanged(auth, user => {
-    if (!user) { window.location.href = 'index.html'; }
+    if (user === null) {
+      window.location.href = 'index.html';
+    }
   });
 }
 
 window.checkAuth = checkAuth;
-
 // Logout
 window.logoutUser = function() {
   signOut(auth).then(() => { window.location.href = 'index.html'; });
