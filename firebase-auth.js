@@ -15,7 +15,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-// Sign In
 window.submitLogin = function() {
   const email = document.getElementById('loginEmail').value;
   const password = document.getElementById('loginPassword').value;
@@ -24,7 +23,6 @@ window.submitLogin = function() {
     .catch(err => { alert('Login failed: ' + err.message); });
 }
 
-// Register
 window.submitRegister = function() {
   const email = document.getElementById('registerEmail').value;
   const password = document.getElementById('registerPassword').value;
@@ -33,14 +31,12 @@ window.submitRegister = function() {
     .catch(err => { alert('Registration failed: ' + err.message); });
 }
 
-// Google Login
 window.googleLogin = function() {
   signInWithPopup(auth, provider)
     .then(() => { window.location.href = 'loan application.html'; })
     .catch(err => { alert('Google login failed: ' + err.message); });
 }
 
-// Forgot Password
 window.forgotPassword = function() {
   const email = document.getElementById('loginEmail').value;
   if (!email) { alert('Please enter your email first!'); return; }
@@ -49,17 +45,15 @@ window.forgotPassword = function() {
     .catch(err => { alert('Error: ' + err.message); });
 }
 
-// Protect pages
+window.logoutUser = function() {
+  signOut(auth).then(() => { window.location.href = 'index.html'; });
+}
+
 export function checkAuth() {
   onAuthStateChanged(auth, user => {
-    if (user === null) {
-      window.location.href = 'index.html';
-    }
+    if (user === undefined) return;
+    if (!user) window.location.href = 'index.html';
   });
 }
 
 window.checkAuth = checkAuth;
-// Logout
-window.logoutUser = function() {
-  signOut(auth).then(() => { window.location.href = 'index.html'; });
-}
