@@ -25,6 +25,16 @@ function switchTab(tab) {
     loginSubtitle.textContent = 'Create your account — it takes under 2 minutes';
   }
 }
+function submitLogin() {
+    window.location.href = 'loan application.html';
+}
+
+function submitRegister() {
+    window.location.href = 'loan application.html';
+}
+function handleGoogleLogin(response) {
+    window.location.href = 'loan application.html';
+}
 
 function goToStep(stepNumber) {
   // Hide all sections
