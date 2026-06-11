@@ -610,3 +610,18 @@ footer strong { color: #F7F3EC; }
     display: flex;
   }
 }
+.btn-logout {
+  background: #3D5A4C;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-logout:hover {
+  background: #2a3f36;
+}

@@ -49,14 +49,16 @@ window.forgotPassword = function() {
     .catch(err => { alert('Error: ' + err.message); });
 }
 
-// Protect pages - call this on protected pages
+// Protect pages
 export function checkAuth() {
   onAuthStateChanged(auth, user => {
     if (!user) { window.location.href = 'index.html'; }
   });
 }
 
-// Sign Out
-export function signOut() {
+window.checkAuth = checkAuth;
+
+// Logout
+window.logoutUser = function() {
   signOut(auth).then(() => { window.location.href = 'index.html'; });
 }

@@ -635,6 +635,21 @@ footer strong { color: #F7F3EC; }
   .nav-links.open {
     display: flex;
   }
+  .btn-logout {
+  background: #3D5A4C;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-logout:hover {
+  background: #2a3f36;
+}
 }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -660,6 +675,7 @@ footer strong { color: #F7F3EC; }
       <li><a href="loan application.html">Loan Application</a></li>
       <li><a href="feedback.html" class="nav-active">Feedback</a></li>
     </ul>
+    <button class="btn-logout" onclick="logoutUser()">Logout</button>
     <button class="hamburger" onclick="toggleMenu()" id="hamburger">
   <span></span>
   <span></span>
