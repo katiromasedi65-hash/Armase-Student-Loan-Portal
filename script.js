@@ -63,25 +63,57 @@ function goToStep(stepNumber) {
 }
 
 function submitApplication() {
-  const declared = document.getElementById('declare').checked;
-  if (!declared) {
-    alert('Please tick the declaration checkbox before submitting.');
-    return;
-  }
+    const declared = document.getElementById('declare').checked;
+    if (!declared) {
+        alert('Please tick the declaration checkbox before submitting.');
+        return;
+    }
 
-  // Hide form, show success
-  document.getElementById('section-4').classList.remove('active');
-  const success = document.getElementById('success-screen');
-  success.classList.add('active');
+    const data = {
+        firstName: document.getElementById('firstName')?.value || '',
+        lastName: document.getElementById('lastName')?.value || '',
+        idNumber: document.getElementById('idNumber')?.value || '',
+        dob: document.getElementById('dob')?.value || '',
+        gender: document.getElementById('gender')?.value || '',
+        nationality: document.getElementById('nationality')?.value || '',
+        email: document.getElementById('email')?.value || '',
+        phone: document.getElementById('phone')?.value || '',
+        address: document.getElementById('address')?.value || '',
+        city: document.getElementById('city')?.value || '',
+        country: document.getElementById('country')?.value || '',
+        emergencyName: document.getElementById('emergencyName')?.value || '',
+        emergencyPhone: document.getElementById('emergencyPhone')?.value || '',
+        institution: document.getElementById('institution')?.value || '',
+        course: document.getElementById('course')?.value || '',
+        studyLevel: document.getElementById('studyLevel')?.value || '',
+        studyMode: document.getElementById('studyMode')?.value || '',
+        startDate: document.getElementById('startDate')?.value || '',
+        gradYear: document.getElementById('gradYear')?.value || '',
+        studentNumber: document.getElementById('studentNumber')?.value || '',
+        loanAmount: document.getElementById('loanAmount')?.value || '',
+        repayment: document.getElementById('repayment')?.value || '',
+        loanPurpose: document.getElementById('loanPurpose')?.value || '',
+        employment: document.getElementById('employment')?.value || '',
+        income: document.getElementById('income')?.value || '',
+        guarantor: document.getElementById('guarantor')?.value || '',
+        comments: document.getElementById('comments')?.value || '',
+    };
 
-  // Mark all steps complete
-  document.querySelectorAll('.step').forEach(s => {
-    s.classList.remove('active');
-    s.classList.add('completed');
-  });
-  document.querySelectorAll('.step-line').forEach(l => l.classList.add('completed'));
+    fetch('https://formspree.io/f/xkoavvgn', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
 
-  window.scrollTo({ top: 116, behavior: 'smooth' });
+    document.getElementById('section-4').classList.remove('active');
+    const success = document.getElementById('success-screen');
+    success.classList.add('active');
+    document.querySelectorAll('.step').forEach(s => {
+        s.classList.remove('active');
+        s.classList.add('completed');
+    });
+    document.querySelectorAll('.step-line').forEach(l => l.classList.add('completed'));
+    window.scrollTo({ top: 116, behavior: 'smooth' });
 }
 const captions = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
 
