@@ -836,5 +836,10 @@ footer strong { color: #F7F3EC; }
   </footer>
 
 <script src="script.js"></script>
+<script type="module" src="firebase-auth.js"></script>
+<script type="module">
+  import { checkAuth } from './firebase-auth.js';
+  checkAuth();
+</script>
 </body>
 </html>
