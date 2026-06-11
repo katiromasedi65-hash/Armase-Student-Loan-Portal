@@ -35,6 +35,10 @@ function submitRegister() {
 function handleGoogleLogin(response) {
     window.location.href = 'loan application.html';
 }
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('open');
+}
 
 function goToStep(stepNumber) {
   // Hide all sections

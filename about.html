@@ -27,6 +27,11 @@
       <li><a href="loan application.html">Loan Application</a></li>
       <li><a href="feedback.html">Feedback</a></li>
     </ul>
+    <button class="hamburger" onclick="toggleMenu()" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
   </nav>
 
   <section class="about-page">
@@ -96,6 +101,12 @@
     </div>
     <span>ARMASE LOANS. All Rights Reserved</span>
   </footer>
+  <script>
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('open');
+}
+</script>
 
 </body>
 </html>
