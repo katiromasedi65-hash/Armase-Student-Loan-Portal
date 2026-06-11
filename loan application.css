@@ -465,3 +465,106 @@ footer strong { color: #F7F3EC; }
 }
 
 .footer-links a:hover { color: #F7F3EC; }
+@media (max-width: 768px) {
+
+  nav {
+    padding: 1rem 1.5rem;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+
+  .progress-bar {
+    padding: 1.5rem 1rem;
+  }
+
+  .step-line {
+    max-width: 30px;
+  }
+
+  .step-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  .step span {
+    font-size: 0.65rem;
+  }
+
+  .form-wrapper {
+    padding: 0 1rem;
+    margin: 1.5rem auto;
+  }
+
+  .form-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: 1;
+  }
+
+  .form-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-next,
+  .btn-back,
+  .btn-submit {
+    width: 100%;
+    text-align: center;
+  }
+
+  footer {
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  nav {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-links {
+    gap: 0.6rem;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+  }
+
+  .step-line {
+    max-width: 20px;
+  }
+
+  .form-section {
+    padding: 1.2rem 0.8rem;
+  }
+}
