@@ -344,9 +344,12 @@
 
 <script src="script.js"></script>
 <script type="module" src="firebase-auth.js"></script>
-<script type="module">
-  import { checkAuth } from './firebase-auth.js';
-  checkAuth();
+<script>
+  window.addEventListener('load', function() {
+    if (!sessionStorage.getItem('loggedIn')) {
+      window.location.href = 'index.html';
+    }
+  });
 </script>
 </body>
 </html>

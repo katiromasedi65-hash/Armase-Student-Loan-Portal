@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, sendPasswordResetEmail, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, sendPasswordResetEmail, signOut } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCQCgi0mYzD5NxWJBLfizV2m9QaP_GbcS4",
@@ -19,7 +19,10 @@ window.submitLogin = function() {
   const email = document.getElementById('loginEmail').value;
   const password = document.getElementById('loginPassword').value;
   signInWithEmailAndPassword(auth, email, password)
-    .then(() => { window.location.href = 'loan application.html'; })
+    .then(() => {
+      sessionStorage.setItem('loggedIn', 'true');
+      window.location.href = 'loan application.html';
+    })
     .catch(err => { alert('Login failed: ' + err.message); });
 }
 
@@ -27,13 +30,19 @@ window.submitRegister = function() {
   const email = document.getElementById('registerEmail').value;
   const password = document.getElementById('registerPassword').value;
   createUserWithEmailAndPassword(auth, email, password)
-    .then(() => { window.location.href = 'loan application.html'; })
+    .then(() => {
+      sessionStorage.setItem('loggedIn', 'true');
+      window.location.href = 'loan application.html';
+    })
     .catch(err => { alert('Registration failed: ' + err.message); });
 }
 
 window.googleLogin = function() {
   signInWithPopup(auth, provider)
-    .then(() => { window.location.href = 'loan application.html'; })
+    .then(() => {
+      sessionStorage.setItem('loggedIn', 'true');
+      window.location.href = 'loan application.html';
+    })
     .catch(err => { alert('Google login failed: ' + err.message); });
 }
 
@@ -46,14 +55,12 @@ window.forgotPassword = function() {
 }
 
 window.logoutUser = function() {
+  sessionStorage.removeItem('loggedIn');
   signOut(auth).then(() => { window.location.href = 'index.html'; });
 }
 
-export function checkAuth() {
-  onAuthStateChanged(auth, user => {
-    if (user === undefined) return;
-    if (!user) window.location.href = 'index.html';
-  });
+window.checkAuth = function() {
+  if (!sessionStorage.getItem('loggedIn')) {
+    window.location.href = 'index.html';
+  }
 }
-
-window.checkAuth = checkAuth;
