@@ -235,3 +235,69 @@ footer strong { color: #F7F3EC; }
 }
 
 .footer-links a:hover { color: #F7F3EC; }
+
+@media (max-width: 768px) {
+
+  nav {
+    padding: 1rem 1.5rem;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+    padding: 0 1.5rem;
+  }
+
+  .about-heading {
+    font-size: 2.5rem;
+  }
+
+  footer {
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  nav {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-links {
+    gap: 0.6rem;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+  }
+
+  .about-cards {
+    padding: 0 1rem;
+  }
+
+  .about-heading {
+    font-size: 2rem;
+  }
+}

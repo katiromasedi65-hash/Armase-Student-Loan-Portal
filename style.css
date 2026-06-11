@@ -563,3 +563,70 @@ h1 { animation: fadeUp 0.6s 0.2s both; }
   justify-content: center;
   padding-bottom: 4rem;
 }
+@media (max-width: 768px) {
+
+  nav {
+    padding: 1rem 1.5rem;
+    top: 36px;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding-top: 116px;
+  }
+
+  .hero-left {
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .hero-right {
+    padding: 2rem 1.5rem;
+  }
+
+  .login-card {
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+
+  nav {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-links {
+    gap: 0.6rem;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+  }
+
+  .hero-left {
+    padding: 2rem 1rem;
+  }
+
+  .login-card {
+    padding: 1.5rem 1rem;
+  }
+}
