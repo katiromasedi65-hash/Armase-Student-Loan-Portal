@@ -50,13 +50,13 @@ window.forgotPassword = function() {
 }
 
 // Protect pages - call this on protected pages
-window.checkAuth = function() {
+export function checkAuth() {
   onAuthStateChanged(auth, user => {
     if (!user) { window.location.href = 'index.html'; }
   });
 }
 
 // Sign Out
-window.signOut = function() {
+export function signOut() {
   signOut(auth).then(() => { window.location.href = 'index.html'; });
 }
