@@ -68,15 +68,11 @@
         <p>Sign in to manage your loan application</p>
       </div>
 
-      <div class="tabs">
-        <button class="tab active" id="tab-login" onclick="switchTab('login')">Sign In</button>
-        <button class="tab" id="tab-register" onclick="switchTab('register')">Create Account</button>
-      </div>
-
+      
       <div class="login-fields" id="login-fields">
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" id="loginEmail" placeholder="e.g bida22-133@thuto.bac.ac.bw">
+          <input type="email" id="loginEmail" placeholder="e.g johndoe@gmail.com">
         </div>
         <div class="form-group">
           <label>Password</label>
@@ -86,28 +82,7 @@
         <button class="btn-primary" onclick="submitLogin()">Sign In to Portal</button>
       </div>
 
-      <div class="register-fields" id="register-fields">
-        <div class="input-row">
-          <div class="form-group" style="flex:1">
-            <label>First Name</label>
-            <input type="text" id="firstName" placeholder="Derrick">
-          </div>
-          <div class="form-group" style="flex:1">
-            <label>Last Name</label>
-            <input type="text" id="lastName" placeholder="Kajane">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Student Email</label>
-          <input type="email" id="registerEmail" placeholder="e.g bida22-133@thuto.bac.ac.bw">
-        </div>
-        <div class="form-group">
-          <label>Create Password</label>
-          <input type="password" id="registerPassword" placeholder="Min. 8 characters">
-        </div>
-        <button class="btn-primary" onclick="submitRegister()">Create My Account</button>
-      </div>
-
+      
       <div class="divider">or continue with</div>
       <div id="g_id_onload"
      data-client_id="941342762672-5ahbmoh1n2vjrcv7536d3kh974m0jg0i.apps.googleusercontent.com"
@@ -130,9 +105,7 @@
         </span>
       </div>
 
-      <p class="signup-prompt" id="signup-toggle">
-        Don't have an account? <a href="#" onclick="switchTab('register'); return false;">Apply in minutes →</a>
-      </p>
+      
     </div>
   </div>
 </section>
