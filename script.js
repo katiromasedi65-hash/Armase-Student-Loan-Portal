@@ -33,6 +33,7 @@ function submitRegister() {
     window.location.href = 'loan application.html';
 }
 function handleGoogleLogin(response) {
+    sessionStorage.setItem('loggedIn', 'true');
     window.location.href = 'loan application.html';
 }
 function toggleMenu() {
@@ -202,7 +203,7 @@ async function uploadID() {
 
   const formData = new FormData();
   formData.append('file', file);
-  formData.append('upload_preset', 'armase id uploads');
+  formData.append('upload_preset', 'armase_id_uploads');
   formData.append('cloud_name', 'dmcuw9p3q');
 
   const response = await fetch('https://api.cloudinary.com/v1_1/dmcuw9p3q/image/upload', {
