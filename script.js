@@ -103,11 +103,25 @@ function submitApplication() {
         comments: document.getElementById('comments')?.value || '',
     };
 
-    fetch('https://formspree.io/f/xkoavvgn', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-    });
+    uploadID().then(idUrl => {
+  data.idDocument = idUrl || 'No ID uploaded';
+  
+  fetch('https://formspree.io/f/xkoavvgn', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+
+  document.getElementById('section-4').classList.remove('active');
+  const success = document.getElementById('success-screen');
+  success.classList.add('active');
+  document.querySelectorAll('.step').forEach(s => {
+    s.classList.remove('active');
+    s.classList.add('completed');
+  });
+  document.querySelectorAll('.step-line').forEach(l => l.classList.add('completed'));
+  window.scrollTo({ top: 116, behavior: 'smooth' });
+});
 
     document.getElementById('section-4').classList.remove('active');
     const success = document.getElementById('success-screen');
@@ -181,4 +195,21 @@ function submitFeedback() {
 
   // Hide the last question section
   document.getElementById('q5').style.display = 'none';
+}
+async function uploadID() {
+  const file = document.getElementById('idUpload').files[0];
+  if (!file) return null;
+
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('upload_preset', 'armase id uploads');
+  formData.append('cloud_name', 'dmcuw9p3q');
+
+  const response = await fetch('https://api.cloudinary.com/v1_1/dmcuw9p3q/image/upload', {
+    method: 'POST',
+    body: formData
+  });
+
+  const data = await response.json();
+  return data.secure_url;
 }
