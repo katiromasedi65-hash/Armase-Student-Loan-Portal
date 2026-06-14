@@ -212,5 +212,12 @@ async function uploadID() {
   });
 
   const data = await response.json();
-  return data.secure_url;
+  console.log('Cloudinary response:', data);
+  
+  if (data.secure_url) {
+    return data.secure_url;
+  } else {
+    console.log('Upload error:', data.error);
+    return null;
+  }
 }
